@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Actividades Inserción</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <link rel="canonical" href="https://codepen.io/difros/pen/zYxJRyM">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  
+        <link rel="stylesheet" href="css/fontello.css">
+        <link rel="stylesheet" href="css/estilos.css">
+
+        <script>
+function resultado() {
+var p1, nota;
+ 
+<!-- 1ª pregunta -->
+if (document.getElementById('p13').checked==true) {p1=1}
+if (p1==1) {document.querySelectorAll('.pregunta1')[2].style.color='#00FF00'}
+else {p1=0} 
+if (document.getElementById('p11').checked==true) {nota='Intenta de nuevo'}
+if (document.getElementById('p12').checked==true) {nota='Intenta de nuevo'}
+if (document.getElementById('p13').checked==true) {nota='Muy bien'}
+if (document.getElementById('p14').checked==true) {nota='Intenta de nuevo'}
+
+document.getElementById('resultado').innerHTML=""+nota;
+rs=confirm("C o n t i n u a r . . .");
+if (rs==false) {document.forms[0].reset();location.reload()}
+}
+</script>
+
+    </head>
+<body>
+    <header>
+    <div class="contenedor">
+        <h1></h1>
+        <input type="checkbox" id="menu-bar">
+        <label class="icon-menu" for="menu-bar"></label>
+            <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="Actividades_de_algoritmos_burbuja.html">Actividades de Algoritmos Burbuja</a>
+            <a href="Actividades_de_algoritmos_de_inserción.html">Actividades de Algoritmos de Inserción</a>
+            <a href="Actividades_de_algoritmos_de_selección.html">Actividades de Algoritmos de Selección</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="titulo">
+            <h2 align="center">Actividad</h2>
+        </section>        
+        <section id="cuerpo">
+        <h3>Seguir los siguientes lineamientos para llevar a cabo esta actividad:</h3>
+            <br> 
+            <p>1. Definir una parte ordenada<br>
+               2. Tomar el primero de la parte desordenada<br>
+               3. Agregarlo ordenadamente en la parte ordenada<br>
+               4. Repetir hasta ordenar todos<br/>
+                 <br><em>Ejemplo de guia</em><br/>
+                 <button id="btn_ver" class="button" on="tap:div_contenido.show">Ver Contenido</button> 
+                 <button id="btn_ocultar" class="button" on="tap:div_contenido.hide">Ocultar Contenido</button>
+   
+                 <br><br><div id="div_contenido" hidden> <p><br/><b>Definimos una parte ordenada:</b><br><p/>
+                 <img  src="images/inser1.jpg">
+                 <br>tomamos el primero de la parte desordenada:<br>
+                 <img src="images/inser2.jpg">
+                 <br>lo agregamos ordenadamente en la parte desordenada:<br>
+                 <img src="images/inser3.jpg">
+                 <br>repetimos hasta ordenar todos:<br>
+                 <img src="images/inser4.jpg">
+                 <br>El código sería el siguiente:
+    <pre>
+    public class Cocinero{ 
+    private ArrayList[Pizza] pizzas;
+    public void ordenarPizzasPorPrecio(){
+    </pre>
+                <br>Tomamos el primero de la parte desordenada y lo agregamos ordenadamente en la parte ordenada:<br>
+    <pre>
+    boolean agregado = false;
+    for(int i=1; i< pizzas.size(); i++){
+    for(int j=1; j>0 && !agregado; j--){
+    Pizza uno=pizzas.get(j);
+    Pizza dos=pizzas.get(j-1);
+    if(uno.darPrecio() < dos.darPrecio()){
+    pizzas.set(j, dos);
+    pizzas.set(j-1, uno);
+    }
+    else
+    agregado=true;
+   }
+  }
+ }
+}
+    </pre>
+           </div>
+           <br>• Organiza la siguiente lista usando el metodo de inserción: 4 - 3 - 5 - 2 - 1.<br>
+
+           <br>• Hacer un programa que capture una arreglo, lo ordene por el método de Inserción
+y lo imprima ordenado y desordenadamente.<br>
+
+           <br>• Escribe un programa que realice capture nombres y los ordene en orden de
+A—Z. Anota el método para que se imprima un arreglo de nombres en orden
+descendente, es decir de la Z a la A. <br>
+
+           <br><br>
+           <hr>
+<form style="font:normal 16px sans-serif">
+<p>• Suponga que usted tiene que ordenar la siguiente lista de números: [15, 5, 4, 18, 12, 19, 14, 10, 8, 20] ¿Cuál de las siguientes listas representa la lista parcialmente ordenada tras tres pasadas completas del ordenamiento por inserción?</p>
+<p class="pregunta1"><input type="radio" name="pregunta1" id="p11"> [4, 5, 12, 15, 14, 10, 8, 18, 19, 20]</p>
+<p class="pregunta1"><input type="radio" name="pregunta1" id="p12"> [15, 5, 4, 10, 12, 8, 14, 18, 19, 20]</p>
+<p class="pregunta1"><input type="radio" name="pregunta1" id="p13"> [4, 5, 15, 18, 12, 19, 14, 10, 8, 20]</p>
+<p class="pregunta1"><input type="radio" name="pregunta1" id="p14"> [15, 5, 4, 18, 12, 19, 14, 8, 10, 20]</p>
+    
+<hr>
+<h2 id="resultado"></h2>
+<p><input type="button" value=" R E S U L T A D O " onclick="resultado()"/></p>
+</form>
+            <p/>
+        </section>
+    </main>
+   <footer>
+    
+    </footer>
+    <HR width="100%">
+        <br><br><br><br><br>
+<footer id="pie">
+    Derechos Reservados &copy; 2020-GRUPO 76 DISEÑOS DE SITIOS WEB UNAD
+    </footer>
+</body>
+</html>
